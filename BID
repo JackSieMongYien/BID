@@ -1,0 +1,36 @@
+#import "BIDAppDelegate.h"
+#import "BIDViewController.h"
+
+@implementation BIDAppDelegate
+
+@synthesize window = _window;
+@synthesize viewController = _viewController;
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions  //委派版本會建立一個視窗,已顯示該檢視
+{
+   self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+   self.viewController = [[BIDViewController alloc]
+   initWithNibName:@"BIDViewController" bundle = nil];
+     self.window.rootViewController = self.viewController;
+	 [self.window makeKeyAndVisible];
+	 return YES;
+}
+-(void)applicationWillResignActivity:(UIApplication *)application
+{
+//send when the application is about to inactive state.Use this method to pause ongoing tasks,disable timers
+//games should use this method to pause the game.
+}
+-(void)applicationDidEnterBackground:(UIApplication *)application
+{
+  //Use this method to releace shared resource,save user data,invalidate timers,and store enough application state 
+}
+-(void)applicationWillEnterForground:(UIApplication *)application
+{
+  //called as part of the transition from the background to the inactive state
+}
+-(void)applicationDidBecomeActive:(UIApplication *)application
+{}
+-(void)applicationWillTerminate:(UIApplication *)application
+{}
+
+@end
